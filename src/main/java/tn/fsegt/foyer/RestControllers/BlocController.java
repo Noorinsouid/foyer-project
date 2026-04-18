@@ -1,7 +1,7 @@
-package com.hebergement.controller;
+package tn.fsegt.foyer.RestControllers;
 
-import com.hebergement.entity.Bloc;
-import com.hebergement.service.BlocService;
+import tn.fsegt.foyer.Entities.Bloc;
+import tn.fsegt.foyer.Services.BlocService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

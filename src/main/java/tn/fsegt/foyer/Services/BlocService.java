@@ -1,7 +1,8 @@
-package com.hebergement.service;
+package tn.fsegt.foyer.Services;
 
-import com.hebergement.entity.Bloc;
-import com.hebergement.repository.BlocRepository;
+import tn.fsegt.foyer.Entities.Bloc;
+
+import tn.fsegt.foyer.Repositories.BlocRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

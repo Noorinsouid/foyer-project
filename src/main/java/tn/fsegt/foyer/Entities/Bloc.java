@@ -1,4 +1,4 @@
-package com.hebergement.entity;
+package tn.fsegt.foyer.Entities;
 
 import jakarta.persistence.*;
 import java.util.List;
@@ -16,7 +16,10 @@ public class Bloc {
 
     @OneToMany(mappedBy = "bloc", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Chambre> chambres;
+    @ManyToOne
+    private Foyer foyer;
 
+    public void setFoyer(Foyer foyer) { this.foyer = foyer; }
     public Bloc() {}
 
     public Bloc(String nomBloc) {

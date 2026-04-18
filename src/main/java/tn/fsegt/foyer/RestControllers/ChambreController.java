@@ -1,7 +1,7 @@
-package com.hebergement.controller;
+package tn.fsegt.foyer.RestControllers;
 
-import com.hebergement.entity.Chambre;
-import com.hebergement.service.ChambreService;
+import tn.fsegt.foyer.Entities.Chambre;
+import tn.fsegt.foyer.Services.ChambreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

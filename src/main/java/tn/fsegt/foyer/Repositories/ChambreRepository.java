@@ -1,7 +1,7 @@
-package com.hebergement.repository;
+package tn.fsegt.foyer.Repositories;
 
-import com.hebergement.entity.Chambre;
-import com.hebergement.entity.Chambre.TypeChambre;
+import tn.fsegt.foyer.Entities.Chambre;
+import tn.fsegt.foyer.Entities.Chambre.TypeChambre;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

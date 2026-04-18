@@ -1,4 +1,4 @@
-package com.hebergement.entity;
+package tn.fsegt.foyer.Entities;
 
 import jakarta.persistence.*;
 
