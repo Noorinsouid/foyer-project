@@ -1,6 +1,7 @@
 package tn.fsegt.foyer.Entities;
 
 import jakarta.persistence.*;
+<<<<<<< HEAD
 import java.util.List;
 
 @Entity
@@ -35,3 +36,22 @@ public class Bloc {
     public List<Chambre> getChambres() { return chambres; }
     public void setChambres(List<Chambre> chambres) { this.chambres = chambres; }
 }
+=======
+import lombok.*;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Bloc {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long idBloc;
+    private String nomBloc;
+    private long capaciteBloc;
+
+    @ManyToOne
+    @JoinColumn(name = "foyer_id")
+    private Foyer foyer;
+}
+>>>>>>> 1acea068f638cbc412e70f0a96cda142b293606a
