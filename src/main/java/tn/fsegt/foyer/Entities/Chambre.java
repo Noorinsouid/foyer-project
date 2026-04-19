@@ -1,6 +1,9 @@
-package com.hebergement.entity;
+package tn.fsegt.foyer.Entities;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "chambres")
@@ -34,7 +37,12 @@ public class Chambre {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "bloc_id")
+    @JsonIgnore
     private Bloc bloc;
+
+    @OneToMany(mappedBy = "chambre", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    private List<Reservation> reservations = new ArrayList<>();
 
     public Chambre() {}
 
@@ -43,25 +51,10 @@ public class Chambre {
         this.typeChambre = typeChambre;
     }
 
-    // Logique métier : capacité et disponibilité
-
-    public int getCapacite() {
-        return typeChambre.getCapacite();
-    }
-
-    public int getPlacesDisponibles() {
-        return Math.max(0, getCapacite() - placesOccupees);
-    }
-
-    public boolean isPleine() {
-        return placesOccupees >= getCapacite();
-    }
-
-    public boolean isDisponible() {
-        return !isPleine();
-    }
-
-    // Getters / Setters
+    public int getCapacite() { return typeChambre.getCapacite(); }
+    public int getPlacesDisponibles() { return Math.max(0, getCapacite() - placesOccupees); }
+    public boolean isPleine() { return placesOccupees >= getCapacite(); }
+    public boolean isDisponible() { return !isPleine(); }
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
@@ -77,4 +70,7 @@ public class Chambre {
 
     public Bloc getBloc() { return bloc; }
     public void setBloc(Bloc bloc) { this.bloc = bloc; }
+
+    public List<Reservation> getReservations() { return reservations; }
+    public void setReservations(List<Reservation> reservations) { this.reservations = reservations; }
 }
